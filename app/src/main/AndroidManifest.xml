@@ -2,19 +2,34 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cheetah.honordream">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/img_erhuo_app_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ui.RegisterActivity" />
+        <activity android:name=".ui.ContainerActivity" />
+        <activity android:name=".ui.ClassificationActivity" />
+        <activity android:name=".ui.SearchActivity" />
+        <activity android:name=".ui.MessageActivity" />
+
+        <activity android:name=".ui.PublishActivity" />
+        <activity android:name=".ui.ImgPreviewActivity" />
+        <activity android:name=".ui.MyShopActivity" />
     </application>
 
 </manifest>

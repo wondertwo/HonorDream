@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">HonorDream</string>
+    <string name="app_name">二货吧</string>
+
+    <string name="navigation_drawer_open">侧滑栏打开</string>
+    <string name="navigation_drawer_close">侧滑栏关闭</string>
+
 </resources>

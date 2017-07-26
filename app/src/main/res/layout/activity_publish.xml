@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_publish"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--顶部栏-->
+    <RelativeLayout
+        android:id="@+id/publish_header_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorAccent"
+        android:gravity="center_vertical">
+        <!--取消按钮-->
+        <ImageButton
+            android:id="@+id/publish_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_centerVertical="true"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:src="@drawable/img_publish_cancel" />
+        <!--发布闲置-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:textSize="18sp"
+            android:text="发布闲置"
+            android:textColor="@android:color/white"
+            android:layout_centerInParent="true" />
+        <!--发布秘籍-->
+        <TextView
+            android:id="@+id/publish_secret"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:textSize="14sp"
+            android:text="发布秘籍"
+            android:textColor="@android:color/white"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <!--添加图片-->
+    <HorizontalScrollView
+        android:id="@+id/publish_add_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_below="@+id/publish_header_bar"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--第一张图片作为封面-->
+            <RelativeLayout
+                android:id="@+id/publish_click_to_add_cover"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp">
+                <ImageView
+                    android:id="@+id/publish_click_to_add_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/img_publish_add_90"
+                    android:scaleType="fitXY" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
+                    android:background="#adf5953d"
+                    android:gravity="center"
+                    android:layout_alignParentBottom="true"
+                    android:textColor="@android:color/white"
+                    android:text="封面"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+            <ImageView
+                android:id="@+id/publish_click_to_add_2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:src="@drawable/img_publish_add_90"
+                android:scaleType="fitXY" />
+            <ImageView
+                android:id="@+id/publish_click_to_add_3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:src="@drawable/img_publish_add_90"
+                android:scaleType="fitXY" />
+            <ImageView
+                android:id="@+id/publish_click_to_add_4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:src="@drawable/img_publish_add_90"
+                android:scaleType="fitXY" />
+            <ImageView
+                android:id="@+id/publish_click_to_add_5"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:src="@drawable/img_publish_add_90"
+                android:scaleType="fitXY" />
+            <ImageView
+                android:id="@+id/publish_click_to_add_6"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:src="@drawable/img_publish_add_90"
+                android:scaleType="fitXY" />
+            <ImageView
+                android:id="@+id/publish_click_to_add_7"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:src="@drawable/img_publish_add_90"
+                android:scaleType="fitXY" />
+            <ImageView
+                android:id="@+id/publish_click_to_add_8"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:src="@drawable/img_publish_add_90"
+                android:scaleType="fitXY" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!--地理定位-->
+    <LinearLayout
+        android:id="@+id/publish_geolocation"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_below="@+id/publish_add_picture"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/img_publish_geolocation" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/publishTextColor"
+            android:text="中国，广东省珠海市，香洲区"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <!--标题、描述-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:orientation="vertical"
+        android:background="@color/globalTextBgColor"
+        android:layout_below="@+id/publish_geolocation"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divideColor" />
+        <EditText
+            android:id="@+id/publish_idle_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:hint="【物品名称】主页根据名称搜索物品哦"
+            android:textSize="14sp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divideColor" />
+        <EditText
+            android:id="@+id/publish_idle_desc"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:lineSpacingMultiplier="1.5"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:hint="【物品概况】描述一下你的物品吧"
+            android:textSize="14sp" />
+            <!--android:maxLines="3" android:ellipsize="end"-->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divideColor" />
+    </LinearLayout>
+
+
+    <!--新旧程度-->
+    <LinearLayout
+        android:id="@+id/publish_idle_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/globalTextBgColor"
+        android:layout_above="@+id/publish_classification"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divideColor" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/publishTextColor"
+                android:text="新旧程度" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/publish_idle_tag_icon"
+                android:textSize="12sp"
+                android:text="设置新旧" />
+            <ImageView
+                android:id="@+id/publish_idle_tag_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginLeft="4dp"
+                android:src="@drawable/img_publish_i_want"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!--闲置分类-->
+    <LinearLayout
+        android:id="@+id/publish_classification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/globalTextBgColor"
+        android:layout_above="@+id/publish_what_i_want"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divideColor" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/publishTextColor"
+                android:text="闲置分类" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/publish_classification_icon"
+                android:textSize="12sp"
+                android:text="选择分类" />
+            <ImageView
+                android:id="@+id/publish_classification_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginLeft="4dp"
+                android:src="@drawable/img_publish_i_want"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!--我想换的-->
+    <LinearLayout
+        android:id="@+id/publish_what_i_want"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/globalTextBgColor"
+        android:layout_above="@+id/publish_confirm"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divideColor" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/publishTextColor"
+                android:text="我想换的" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/publish_i_want_icon"
+                android:textSize="12sp"
+                android:text="添加物品" />
+            <ImageView
+                android:id="@+id/publish_i_want_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginLeft="4dp"
+                android:src="@drawable/img_publish_i_want"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divideColor" />
+    </LinearLayout>
+
+    <!--确认发布-->
+    <Button
+        android:id="@+id/publish_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="确认发布"
+        android:textSize="18sp"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

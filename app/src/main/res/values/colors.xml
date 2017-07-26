@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#F27E13</color>
+    <color name="colorPrimaryDark">#F27E13</color>
+    <color name="colorAccent">#F27E13</color>
+    <!--<color name="colorAccent">#FF4081</color>-->
+
+    <!--全局主题颜色-->
+    <color name="globalColor">#F27E13</color>
+
+    <color name="divideColor">#e6e2e2</color>
+    <color name="tabbarColor">#fcf6f6</color>
+    <color name="globalTextBgColor">#EFEFF4</color>
+    <color name="publishTextColor">#0099cc</color>
+
+    <color name="tabbarTextColorUnselected">#707070</color>
+    <color name="tabbarTextColorSelected">#F27E13</color>
+
 </resources>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tabbarColor">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divideColor"/>
+
+    <!--底部Tab标签切换栏-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+        <RadioGroup
+            android:id="@+id/tab_bar_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:background="@color/tabbarColor">
+            <RadioButton
+                android:id="@+id/tab_bar_home"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:button="@null"
+                android:drawableTop="@drawable/tab_selector_home"
+                android:gravity="center"
+                android:text="二货"
+                android:textColor="@drawable/tab_selector_text_color"
+                android:textSize="10sp" />
+
+            <RadioButton
+                android:id="@+id/tab_bar_null"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center" />
+            <RadioButton
+                android:id="@+id/tab_bar_person"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:gravity="center"
+                android:layout_gravity="end"
+                android:textColor="@drawable/tab_selector_text_color"
+                android:text="我的"
+                android:drawableTop="@drawable/tab_selector_person"
+                android:textSize="10sp" />
+        </RadioGroup>
+        <RadioButton
+            android:id="@+id/tab_bar_publish"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:background="@color/tabbarColor"
+            android:button="@null"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:textColor="@drawable/tab_selector_text_color"
+            android:text="发布"
+            android:drawableTop="@drawable/tab_selector_publish"
+            android:textSize="10sp" />
+    </RelativeLayout>
+
+    <!--底部Tab标签切换栏-->
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_gravity="center_vertical">
+        &lt;!&ndash;二货&ndash;&gt;
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@drawable/img_tab_bar_erhuo_1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="二货"
+                android:textSize="10sp" />
+        </LinearLayout>
+        &lt;!&ndash;发布&ndash;&gt;
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@drawable/img_tab_bar_publish" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发布"
+                android:textSize="10sp" />
+        </LinearLayout>
+        &lt;!&ndash;我的&ndash;&gt;
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@drawable/img_tab_bar_me_1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+    </LinearLayout>-->
+
+</LinearLayout>

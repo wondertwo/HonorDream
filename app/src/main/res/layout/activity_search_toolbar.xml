@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@color/colorAccent"
+    tools:context=".ui.ContainerActivity">
+
+    <!--分类页按钮-->
+    <ImageButton
+        android:id="@+id/activity_search_toolbar_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="6dp"
+        android:src="@drawable/img_search_toolbar_back" />
+
+    <!--搜索框-->
+    <LinearLayout
+        android:id="@+id/activity_search_toolbar_bar"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/img_search_toolbar_search" />
+        <EditText
+            android:id="@+id/activity_search_toolbar_search_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginStart="5dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!--消息通知按钮-->
+    <ImageButton
+        android:id="@+id/activity_search_toolbar_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="12dp"
+        android:src="@drawable/img_search_toolbar_message" />
+
+</LinearLayout>
