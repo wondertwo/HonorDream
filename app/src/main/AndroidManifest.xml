@@ -31,6 +31,8 @@
         <activity android:name=".ui.ImgPreviewActivity" />
         <activity android:name=".ui.MyShopActivity" />
         <activity android:name=".ui.DetailsActivity" />
+        <activity android:name=".ui.MsgListActivity" />
+
     </application>
 
 </manifest>

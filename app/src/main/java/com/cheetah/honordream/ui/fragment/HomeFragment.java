@@ -12,17 +12,14 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.cheetah.honordream.R;
-import com.cheetah.honordream.ui.ClassificationActivity;
-import com.cheetah.honordream.ui.ContainerActivity;
+import com.cheetah.honordream.constant.WebURLS;
 import com.cheetah.honordream.ui.DetailsActivity;
-import com.cheetah.honordream.ui.MessageActivity;
+import com.cheetah.honordream.ui.MsgListActivity;
 import com.cheetah.honordream.ui.SearchActivity;
 
 /**
@@ -33,15 +30,11 @@ import com.cheetah.honordream.ui.SearchActivity;
 
 public class HomeFragment extends Fragment {
 
-    private final String homePageURL = "http://10.20.240.37:8080/index.html";
-    private final String detailsURL = "http://10.20.240.37:8080/views/details.html";
-
     private ImageButton mToolbarMenu;
     private LinearLayout mToolbarSearch;
     private TextView mToolbarSearchText;
-    private ImageButton mToolbarMessage;
+    private ImageButton mToolbarMsgList;
 
-    private FrameLayout mHomeContent;
     private WebView mHomeWebView;
 
     @Override
@@ -111,20 +104,19 @@ public class HomeFragment extends Fragment {
         mHomeWebView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                if (!url.equals(detailsURL)) {
-                    view.loadUrl(url);
-                    return true;
+                if (url.equals(WebURLS.DETAILS_URL)) {
+                    //跳转到物品详情页
+                    Intent intent = new Intent(getActivity(), DetailsActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("DETAILS_URL", WebURLS.DETAILS_URL);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+
+                    return true; //
                 }
 
-                //跳转到物品详情页
-                Intent intent = new Intent(getActivity(), DetailsActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("detailsURL", detailsURL);
-                intent.putExtras(bundle);
-                startActivity(intent);
-
-                //getActivity().finish();
-                return true; //
+                view.loadUrl(url);
+                return true;
             }
         });
 
@@ -132,7 +124,7 @@ public class HomeFragment extends Fragment {
         mHomeWebView.setWebChromeClient(new WebChromeClient());
 
         //加载网页
-        mHomeWebView.loadUrl(homePageURL);
+        mHomeWebView.loadUrl(WebURLS.HOME_PAGE_URL);
     }
 
     private void initializeUI(View homeView) {
@@ -140,8 +132,8 @@ public class HomeFragment extends Fragment {
         mToolbarMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ClassificationActivity.class);
-                startActivity(intent);
+                /*Intent intent = new Intent(getActivity(), ClassificationActivity.class);
+                startActivity(intent);*/
             }
         });
         mToolbarSearch = (LinearLayout) homeView.findViewById(R.id.toolbar_search);
@@ -153,11 +145,11 @@ public class HomeFragment extends Fragment {
             }
         });
         mToolbarSearchText = (TextView) homeView.findViewById(R.id.toolbar_search_text);
-        mToolbarMessage = (ImageButton) homeView.findViewById(R.id.toolbar_message);
-        mToolbarMessage.setOnClickListener(new View.OnClickListener() {
+        mToolbarMsgList = (ImageButton) homeView.findViewById(R.id.toolbar_message);
+        mToolbarMsgList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MessageActivity.class);
+                Intent intent = new Intent(getActivity(), MsgListActivity.class);
                 startActivity(intent);
             }
         });

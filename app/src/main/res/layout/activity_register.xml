@@ -30,6 +30,7 @@
                 android:layout_height="match_parent"
                 android:paddingLeft="14dp"
                 android:inputType="number"
+                android:cursorVisible="false"
                 android:textSize="16sp"
                 android:hint="请输入手机号" />
             <Button
@@ -58,6 +59,7 @@
                 android:layout_height="match_parent"
                 android:paddingLeft="14dp"
                 android:inputType="number"
+                android:cursorVisible="false"
                 android:textSize="16sp"
                 android:hint="请输入短信验证码" />
         </LinearLayout>
@@ -79,6 +81,7 @@
                 android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:paddingLeft="14dp"
+                android:cursorVisible="false"
                 android:inputType="textPassword"
                 android:textSize="16sp"
                 android:hint="请输入密码(至少6位)" />
@@ -101,6 +104,7 @@
                 android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:paddingLeft="14dp"
+                android:cursorVisible="false"
                 android:textSize="16sp"
                 android:hint="请输入昵称(最多6个字符)" />
         </LinearLayout>

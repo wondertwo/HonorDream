@@ -30,6 +30,7 @@
                 android:layout_height="match_parent"
                 android:inputType="number"
                 android:gravity="center_horizontal"
+                android:cursorVisible="false"
                 android:textSize="16sp"
                 android:hint="请输入账号(手机号)" />
         </LinearLayout>
@@ -52,6 +53,7 @@
                 android:layout_height="match_parent"
                 android:inputType="textPassword"
                 android:gravity="center_horizontal"
+                android:cursorVisible="false"
                 android:textSize="16sp"
                 android:hint="请输入密码" />
         </LinearLayout>

@@ -9,6 +9,7 @@
     <color name="globalColor">#F27E13</color>
 
     <color name="divideColor">#e6e2e2</color>
+    <color name="msgDivideColor">#aea9a9</color>
     <color name="tabbarColor">#fcf6f6</color>
     <color name="globalTextBgColor">#EFEFF4</color>
     <color name="publishTextColor">#0099cc</color>

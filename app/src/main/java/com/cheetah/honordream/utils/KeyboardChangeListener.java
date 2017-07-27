@@ -7,13 +7,13 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 
 /**
- * 软键盘弹出收回监听
+ * 软键盘监听
  *
  * Created by wondertwo on 2017/7/25.
  */
 
 public class KeyboardChangeListener implements ViewTreeObserver.OnGlobalLayoutListener {
-    private static final String TAG = "ListenerHandler";
+    private static final String TAG = "KeyboardChangeListener";
     private View mContentView;
     private int mOriginHeight;
     private int mPreHeight;

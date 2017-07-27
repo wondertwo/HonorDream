@@ -1,6 +1,7 @@
 package com.cheetah.honordream.ui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.webkit.WebChromeClient;
@@ -9,6 +10,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.cheetah.honordream.R;
+import com.cheetah.honordream.constant.WebURLS;
 
 /**
  * 闲置详情页
@@ -27,7 +29,7 @@ public class DetailsActivity extends Activity {
 
         //解析Bundle数据
         Bundle bundle = getIntent().getExtras();
-        String mDetailsURL = bundle.getString("detailsURL");
+        String mDetailsURL = bundle.getString("DETAILS_URL");
 
         //获取WebView实例
         mDetailsWebView = (WebView) findViewById(R.id.activity_details_web_view);
@@ -68,6 +70,12 @@ public class DetailsActivity extends Activity {
         mWebView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                //回退到主页
+                if (url.equals(WebURLS.HOME_PAGE_URL)) {
+                    Intent intent = new Intent(DetailsActivity.this, ContainerActivity.class);
+                    startActivity(intent);
+                }
+
                 view.loadUrl(url);
                 return true; //在WebView中打开新链接
             }

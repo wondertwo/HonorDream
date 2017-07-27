@@ -8,7 +8,7 @@
     android:background="@color/colorAccent"
     tools:context=".ui.ContainerActivity">
 
-    <!--分类页按钮-->
+    <!--返回按钮-->
     <ImageButton
         android:id="@+id/activity_search_toolbar_back"
         android:layout_width="wrap_content"
@@ -16,7 +16,7 @@
         android:background="@android:color/transparent"
         android:layout_marginLeft="12dp"
         android:layout_marginRight="6dp"
-        android:src="@drawable/img_search_toolbar_back" />
+        android:src="@drawable/img_toolbar_back" />
 
     <!--搜索框-->
     <LinearLayout

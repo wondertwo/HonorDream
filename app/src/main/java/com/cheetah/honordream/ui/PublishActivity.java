@@ -58,6 +58,7 @@ public class PublishActivity extends Activity
     private Button mPublishConfirm;
     private EditText mIdleName;
     private EditText mIdleDesc;
+    private KeyboardChangeListener mKeyboardChangeListener;
 
     private ImageButton mPublishCancel;
     private TextView mPublishSecret;
@@ -117,7 +118,9 @@ public class PublishActivity extends Activity
 
         //标题、描述
         mIdleName = (EditText) findViewById(R.id.publish_idle_name);
-        mIdleName.setCursorVisible(false);
+        //mIdleName.setCursorVisible(false);
+        mIdleDesc = (EditText) findViewById(R.id.publish_idle_desc);
+        //mIdleDesc.setCursorVisible(false);
         mIdleName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,8 +128,6 @@ public class PublishActivity extends Activity
                 mIdleName.setCursorVisible(true);
             }
         });
-        mIdleDesc = (EditText) findViewById(R.id.publish_idle_desc);
-        mIdleDesc.setCursorVisible(false);
         mIdleDesc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,6 +135,18 @@ public class PublishActivity extends Activity
                 mIdleDesc.setCursorVisible(true);
             }
         });
+//        //软键盘监听
+//        mKeyboardChangeListener = new KeyboardChangeListener(PublishActivity.this);
+//        mKeyboardChangeListener.setKeyBoardListener(new KeyboardChangeListener.KeyBoardListener() {
+//            @Override
+//            public void onKeyboardChange(boolean isShow, int keyboardHeight) {
+//                if (isShow) return;
+//                mIdleName.setFocusable(false);
+//                mIdleName.setCursorVisible(false);
+//                mIdleDesc.setFocusable(false);
+//                mIdleDesc.setCursorVisible(false);
+//            }
+//        });
 
         initializeAttrItems(); //初始化物品属性
 

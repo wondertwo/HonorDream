@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 
 import com.cheetah.honordream.R;
 import com.cheetah.honordream.ui.LoginActivity;
+import com.cheetah.honordream.ui.MsgListActivity;
 import com.cheetah.honordream.ui.MyShopActivity;
 
 /**
@@ -23,7 +24,8 @@ import com.cheetah.honordream.ui.MyShopActivity;
 public class PersonFragment extends Fragment {
 
     private Button mLoginNowBtn;
-    private LinearLayout mMyshop;
+    private LinearLayout mMyShop;
+    private LinearLayout mMsgLst;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,11 +52,20 @@ public class PersonFragment extends Fragment {
             }
         });
 
-        mMyshop = (LinearLayout) personView.findViewById(R.id.fragment_person_my_shop);
-        mMyshop.setOnClickListener(new View.OnClickListener() {
+        mMyShop = (LinearLayout) personView.findViewById(R.id.fragment_person_my_shop);
+        mMyShop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MyShopActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mMsgLst = (LinearLayout) personView.findViewById(R.id.fragment_person_msg_list);
+        mMsgLst.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MsgListActivity.class);
                 startActivity(intent);
             }
         });

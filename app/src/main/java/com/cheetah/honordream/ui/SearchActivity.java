@@ -17,6 +17,8 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import com.cheetah.honordream.R;
+import com.cheetah.honordream.constant.WebURLS;
+import com.cheetah.honordream.utils.KeyboardChangeListener;
 
 /**
  * 搜索页面
@@ -26,14 +28,14 @@ import com.cheetah.honordream.R;
 
 public class SearchActivity extends Activity {
 
-    private final String searchResultURL = "http://10.20.240.37:8080/index.html";
-
     private ImageButton mSearchBack;
     private LinearLayout mSearchBar;
     private EditText mSearchText;
     private ImageButton mSearchMessage;
 
     private WebView mSearchWebView;
+
+    private KeyboardChangeListener mKeyboardChangeListener; //监听软键盘
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,6 +45,15 @@ public class SearchActivity extends Activity {
         initializeUI(); //界面初始化
         initializeWebView(); //初始化WebView
 
+        mKeyboardChangeListener = new KeyboardChangeListener(SearchActivity.this);
+        mKeyboardChangeListener.setKeyBoardListener(new KeyboardChangeListener.KeyBoardListener() {
+            @Override
+            public void onKeyboardChange(boolean isShow, int keyboardHeight) {
+                if (isShow) return;
+                //加载网页
+                mSearchWebView.loadUrl(WebURLS.SEARCH_RESULT_URL);
+            }
+        });
     }
 
     private void initializeWebView() {
@@ -81,16 +92,24 @@ public class SearchActivity extends Activity {
         mSearchWebView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url); //在WebView中打开新链接
+                if (url.equals(WebURLS.DETAILS_URL)) {
+                    //跳转到物品详情页
+                    Intent intent = new Intent(SearchActivity.this, DetailsActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("DETAILS_URL", WebURLS.DETAILS_URL);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+
+                    return true; //
+                }
+
+                view.loadUrl(url);
                 return true;
             }
         });
 
         //设置WebChromeClient
         mSearchWebView.setWebChromeClient(new WebChromeClient());
-
-        //加载网页
-        mSearchWebView.loadUrl(searchResultURL);
     }
 
     private void initializeUI() {
@@ -120,11 +139,12 @@ public class SearchActivity extends Activity {
         mSearchMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SearchActivity.this, MessageActivity.class);
+                Intent intent = new Intent(SearchActivity.this, MsgListActivity.class);
                 startActivity(intent);
             }
         });
     }
+
 }
 
 // settings.setAllowUniversalAccessFromFileURLs(true);
