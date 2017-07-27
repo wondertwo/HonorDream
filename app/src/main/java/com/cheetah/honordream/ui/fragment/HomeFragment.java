@@ -12,12 +12,16 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cheetah.honordream.R;
 import com.cheetah.honordream.ui.ClassificationActivity;
+import com.cheetah.honordream.ui.ContainerActivity;
+import com.cheetah.honordream.ui.DetailsActivity;
 import com.cheetah.honordream.ui.MessageActivity;
 import com.cheetah.honordream.ui.SearchActivity;
 
@@ -29,11 +33,15 @@ import com.cheetah.honordream.ui.SearchActivity;
 
 public class HomeFragment extends Fragment {
 
+    private final String homePageURL = "http://10.20.240.37:8080/index.html";
+    private final String detailsURL = "http://10.20.240.37:8080/views/details.html";
+
     private ImageButton mToolbarMenu;
     private LinearLayout mToolbarSearch;
     private TextView mToolbarSearchText;
     private ImageButton mToolbarMessage;
 
+    private FrameLayout mHomeContent;
     private WebView mHomeWebView;
 
     @Override
@@ -103,8 +111,20 @@ public class HomeFragment extends Fragment {
         mHomeWebView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url); //在WebView中打开新链接
-                return true;
+                if (!url.equals(detailsURL)) {
+                    view.loadUrl(url);
+                    return true;
+                }
+
+                //跳转到物品详情页
+                Intent intent = new Intent(getActivity(), DetailsActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("detailsURL", detailsURL);
+                intent.putExtras(bundle);
+                startActivity(intent);
+
+                //getActivity().finish();
+                return true; //
             }
         });
 
@@ -112,7 +132,7 @@ public class HomeFragment extends Fragment {
         mHomeWebView.setWebChromeClient(new WebChromeClient());
 
         //加载网页
-        mHomeWebView.loadUrl("http://10.20.240.37:8080/index.html");
+        mHomeWebView.loadUrl(homePageURL);
     }
 
     private void initializeUI(View homeView) {

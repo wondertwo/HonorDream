@@ -26,6 +26,8 @@ import com.cheetah.honordream.R;
 
 public class SearchActivity extends Activity {
 
+    private final String searchResultURL = "http://10.20.240.37:8080/index.html";
+
     private ImageButton mSearchBack;
     private LinearLayout mSearchBar;
     private EditText mSearchText;
@@ -88,7 +90,7 @@ public class SearchActivity extends Activity {
         mSearchWebView.setWebChromeClient(new WebChromeClient());
 
         //加载网页
-        mSearchWebView.loadUrl("http://10.20.240.37:8080/index.html");
+        mSearchWebView.loadUrl(searchResultURL);
     }
 
     private void initializeUI() {
