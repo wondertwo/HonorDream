@@ -32,15 +32,6 @@
                 android:textColor="@android:color/white"
                 android:text="立即登录" />
         </LinearLayout>
-        <ImageButton
-            android:id="@+id/fragment_person_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:src="@drawable/img_fragment_person_setting"
-            android:padding="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 
     <!--中间部分-->
@@ -60,8 +51,9 @@
             android:orientation="vertical"
             android:gravity="center">
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="fitXY"
                 android:src="@drawable/img_fragment_person_my_shop" />
             <TextView
                 android:layout_width="wrap_content"
@@ -77,8 +69,9 @@
             android:orientation="vertical"
             android:gravity="center">
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="fitXY"
                 android:src="@drawable/img_fragment_person_favorite" />
             <TextView
                 android:layout_width="wrap_content"
@@ -94,8 +87,9 @@
             android:orientation="vertical"
             android:gravity="center">
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="fitXY"
                 android:src="@drawable/img_fragment_person_record" />
             <TextView
                 android:layout_width="wrap_content"
@@ -111,8 +105,9 @@
             android:orientation="vertical"
             android:gravity="center">
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="fitXY"
                 android:src="@drawable/img_fragment_person_credit" />
             <TextView
                 android:layout_width="wrap_content"
@@ -124,9 +119,9 @@
     </LinearLayout>
 
 
-    <!--消息列表-->
+    <!--上门取件-->
     <LinearLayout
-        android:id="@+id/fragment_person_msg_list"
+        android:id="@+id/fragment_person_pickup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -148,23 +143,24 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp">
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:scaleType="fitXY"
                 android:layout_gravity="end"
                 android:layout_marginStart="4dp"
-                android:src="@drawable/img_fragment_person_msg_list" />
+                android:src="@drawable/img_fragment_person_pickup" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:textSize="16sp"
-                android:text="消息列表" />
+                android:text="上门取件" />
         </LinearLayout>
     </LinearLayout>
 
-    <!--上门取件-->
+    <!--个人设置-->
     <LinearLayout
-        android:id="@+id/fragment_person_pickup"
+        android:id="@+id/fragment_person_setting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -185,17 +181,18 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp">
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:scaleType="fitXY"
                 android:layout_gravity="end"
                 android:layout_marginStart="4dp"
-                android:src="@drawable/img_fragment_person_pickup" />
+                android:src="@drawable/img_fragment_person_setting" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:textSize="16sp"
-                android:text="上门取件" />
+                android:text="个人设置" />
         </LinearLayout>
         <ImageView
             android:layout_width="match_parent"
@@ -227,8 +224,9 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp">
             <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:scaleType="fitXY"
                 android:layout_gravity="end"
                 android:layout_marginStart="4dp"
                 android:src="@drawable/img_fragment_person_service" />
@@ -247,6 +245,16 @@
 
 </LinearLayout>
 
+
+<!--<ImageButton
+android:id="@+id/fragment_person_setting"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:background="@android:color/transparent"
+android:src="@drawable/img_fragment_person_setting"
+android:padding="10dp"
+android:layout_marginEnd="10dp"
+android:layout_alignParentEnd="true" />-->
 
     <!--我的信用-->
     <!--<LinearLayout

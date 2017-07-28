@@ -1,8 +1,12 @@
 package com.cheetah.honordream.ui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.cheetah.honordream.R;
 
@@ -13,9 +17,41 @@ import com.cheetah.honordream.R;
  */
 
 public class MessageActivity extends Activity {
+
+    private ImageButton mMessageBack;
+    private ImageButton mMessageShop;
+    private TextView mMessageExchangeNow;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
+
+        mMessageBack = (ImageButton) findViewById(R.id.message_back);
+        mMessageBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MessageActivity.this, MsgListActivity.class));
+            }
+        });
+
+        //跳转到(对方的)个人店铺
+        mMessageShop = (ImageButton) findViewById(R.id.message_shop);
+        mMessageShop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO
+            }
+        });
+
+        //跳转到交换页
+        mMessageExchangeNow = (TextView) findViewById(R.id.message_exchange_now);
+        mMessageExchangeNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO
+            }
+        });
+
     }
 }

@@ -1,7 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--顶部栏-->
+    <RelativeLayout
+        android:id="@+id/message_header"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorAccent"
+        android:gravity="center_vertical">
+        <!--返回-->
+        <ImageButton
+            android:id="@+id/message_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/img_toolbar_back"
+            android:layout_centerVertical="true"
+            android:padding="8dp"
+            android:layout_marginStart="4dp" />
+        <!--消息-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="香洲区第一吕布"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+        <!--返回-->
+        <ImageButton
+            android:id="@+id/message_shop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/img_message_shop"
+            android:layout_centerVertical="true"
+            android:padding="8dp"
+            android:layout_marginEnd="4dp" />
+    </RelativeLayout>
+
+    <!--立即换-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:gravity="center_vertical"
+        android:background="@color/messageBannerBgColor"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp">
+        <ImageView
+            android:id="@+id/message_quilt"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_message_quilt" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/message_quilt"
+            android:paddingLeft="8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="3dp"
+                android:text="【9新】" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="4dp"
+                android:text="学姐毕业，处理被子啦" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/message_exchange_now"
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:background="@color/messageBannerBtnBgColor"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:textColor="@android:color/white"
+            android:text="立即换"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <!--内容区-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <!--聊天内容-->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_message_chat"
+            android:scaleType="fitXY" />
+    </ScrollView>
+
+    <!--底部栏-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:src="@drawable/img_message_bottom"
+        android:scaleType="fitXY"
+        />
 
 </LinearLayout>

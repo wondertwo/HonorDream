@@ -17,4 +17,7 @@
     <color name="tabbarTextColorUnselected">#707070</color>
     <color name="tabbarTextColorSelected">#F27E13</color>
 
+    <color name="messageBannerBgColor">#aba4a4</color>
+    <color name="messageBannerBtnBgColor">#F27E13</color>
+
 </resources>
