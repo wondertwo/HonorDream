@@ -29,10 +29,11 @@
 
         <activity android:name=".ui.PublishActivity" />
         <activity android:name=".ui.ImgPreviewActivity" />
-        <activity android:name=".ui.MyShopActivity" />
         <activity android:name=".ui.DetailsActivity" />
         <activity android:name=".ui.MsgListActivity" />
-        <activity android:name=".ui.CheckItemActivity" />
+        <activity android:name=".ui.ExchangeActivity" />
+        <activity android:name=".ui.MyShopActivity" />
+        <activity android:name=".ui.OtherShopActivity" />
 
     </application>
 

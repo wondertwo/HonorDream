@@ -1,7 +1,6 @@
 package com.cheetah.honordream.ui;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.webkit.WebChromeClient;
@@ -13,23 +12,23 @@ import com.cheetah.honordream.R;
 import com.cheetah.honordream.constant.WebURLS;
 
 /**
- * 个人店铺(自己)
+ * 个人店铺(对方)
  *
- * Created by wondertwo on 2017/7/25.
+ * Created by wondertwo on 2017/7/29.
  */
 
-public class MyShopActivity extends Activity {
+public class OtherShopActivity extends Activity {
 
-    private WebView mShopWebView;
+    private WebView mOtherShopWebView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_shop);
+        setContentView(R.layout.activity_other_shop);
 
         //拿到对象
-        mShopWebView = (WebView) findViewById(R.id.activity_my_shop_web_view);
-        initializeWebView(mShopWebView);
+        mOtherShopWebView = (WebView) findViewById(R.id.activity_other_shop_web_view);
+        initializeWebView(mOtherShopWebView);
     }
 
     private void initializeWebView(WebView mWebView) {
@@ -60,12 +59,6 @@ public class MyShopActivity extends Activity {
         mWebView.setWebChromeClient(new WebChromeClient());
 
         //加载网页
-        mWebView.loadUrl(WebURLS.SELF_SHOP_URL);
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        startActivity(new Intent(MyShopActivity.this, ContainerActivity.class));
+        mWebView.loadUrl(WebURLS.OTHER_SHOP_RUL);
     }
 }

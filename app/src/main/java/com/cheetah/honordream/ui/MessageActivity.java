@@ -40,7 +40,7 @@ public class MessageActivity extends Activity {
         mMessageShop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO
+                startActivity(new Intent(MessageActivity.this, OtherShopActivity.class));
             }
         });
 
@@ -49,10 +49,15 @@ public class MessageActivity extends Activity {
         mMessageExchangeNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO
-                startActivity(new Intent(MessageActivity.this, CheckItemActivity.class));
+                startActivity(new Intent(MessageActivity.this, ExchangeActivity.class));
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(MessageActivity.this, ContainerActivity.class));
     }
 }

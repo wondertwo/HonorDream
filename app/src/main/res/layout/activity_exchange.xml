@@ -5,11 +5,11 @@
     android:layout_height="match_parent">
 
     <FrameLayout
-        android:id="@+id/activity_my_shop_content"
+        android:id="@+id/activity_exchange_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <WebView
-            android:id="@+id/activity_my_shop_web_view"
+            android:id="@+id/activity_exchange_web_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </WebView>

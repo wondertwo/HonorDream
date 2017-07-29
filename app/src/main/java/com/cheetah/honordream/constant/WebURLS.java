@@ -21,11 +21,14 @@ public class WebURLS {
     public final static String MESSAGE_URL = WEB_URLS_BASE_IP + "/views/message.html";
     //勾选页面
     public final static String CHECK_ITEMS_URL = WEB_URLS_BASE_IP + "/views/exchange.html";
-    //交易页面
+    //交易页1
     public final static String EXCHANGE_URL = WEB_URLS_BASE_IP + "/views/swap.html";
-    //确认收获页
+    //交易页2
     public final static String ENSURE_URL = WEB_URLS_BASE_IP + "/views/deal.html";
-    //交换完成页
+    //交易页3
     public final static String COMPLETE_URL = WEB_URLS_BASE_IP + "/views/complete.html";
-
+    //个人店铺(自己)
+    public final static String SELF_SHOP_URL = WEB_URLS_BASE_IP + "/views/self.html";
+    //个人店铺(对方)
+    public final static String OTHER_SHOP_RUL = WEB_URLS_BASE_IP + "/views/personal.html";
 }
