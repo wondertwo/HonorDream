@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">二货吧</string>
 
-    <string name="navigation_drawer_open">侧滑栏打开</string>
-    <string name="navigation_drawer_close">侧滑栏关闭</string>
+    <!--应用名称-->
+    <string name="app_name">二货</string>
 
+    <!--弹窗信息-->
     <string name="exchange_complete_title">确认已收货</string>
     <string name="exchange_complete_msg">请确认已收到本次交换的物品？</string>
     <string name="positive_btn_msg">确定</string>
