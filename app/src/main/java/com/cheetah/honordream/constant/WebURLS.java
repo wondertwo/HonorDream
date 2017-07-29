@@ -17,5 +17,15 @@ public class WebURLS {
     public final static String DETAILS_URL = WEB_URLS_BASE_IP + "/views/details.html";
     //搜索结果
     public final static String SEARCH_RESULT_URL = WEB_URLS_BASE_IP + "/views/result.html";
+    //消息页面
+    public final static String MESSAGE_URL = WEB_URLS_BASE_IP + "/views/message.html";
+    //勾选页面
+    public final static String CHECK_ITEMS_URL = WEB_URLS_BASE_IP + "/views/exchange.html";
+    //交易页面
+    public final static String EXCHANGE_URL = WEB_URLS_BASE_IP + "/views/swap.html";
+    //确认收获页
+    public final static String ENSURE_URL = WEB_URLS_BASE_IP + "/views/deal.html";
+    //交换完成页
+    public final static String COMPLETE_URL = WEB_URLS_BASE_IP + "/views/complete.html";
 
 }

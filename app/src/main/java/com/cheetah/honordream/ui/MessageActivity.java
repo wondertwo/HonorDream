@@ -31,7 +31,7 @@ public class MessageActivity extends Activity {
         mMessageBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MessageActivity.this, MsgListActivity.class));
+                startActivity(new Intent(MessageActivity.this, ContainerActivity.class));
             }
         });
 
@@ -44,12 +44,13 @@ public class MessageActivity extends Activity {
             }
         });
 
-        //跳转到交换页
+        //跳转到勾选页
         mMessageExchangeNow = (TextView) findViewById(R.id.message_exchange_now);
         mMessageExchangeNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO
+                startActivity(new Intent(MessageActivity.this, CheckItemActivity.class));
             }
         });
 

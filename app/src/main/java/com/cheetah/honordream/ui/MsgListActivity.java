@@ -39,7 +39,7 @@ public class MsgListActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //跳转到消息聊天详情页
-                startActivity(new Intent(MsgListActivity.this, MessageActivity.class));
+                //startActivity(new Intent(MsgListActivity.this, MessageActivity.class));
             }
         });
     }

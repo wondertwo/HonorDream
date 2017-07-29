@@ -13,27 +13,22 @@ import com.cheetah.honordream.R;
 import com.cheetah.honordream.constant.WebURLS;
 
 /**
- * 闲置详情页
  *
- * Created by wondertwo on 2017/7/27.
+ * Created by wondertwo on 2017/7/28.
  */
 
-public class DetailsActivity extends Activity {
+public class CheckItemActivity extends Activity {
 
-    private WebView mDetailsWebView;
+    private WebView mCheckItemWebView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_details);
-
-        //解析Bundle数据
-        Bundle bundle = getIntent().getExtras();
-        String mDetailsURL = bundle.getString("DETAILS_URL");
+        setContentView(R.layout.activity_check_item);
 
         //获取WebView实例
-        mDetailsWebView = (WebView) findViewById(R.id.activity_details_web_view);
-        initializeWebView(mDetailsWebView, mDetailsURL);
+        mCheckItemWebView = (WebView) findViewById(R.id.activity_check_item_web_view);
+        initializeWebView(mCheckItemWebView, WebURLS.CHECK_ITEMS_URL);
     }
 
     private void initializeWebView(WebView mWebView, String URL) {
@@ -70,18 +65,22 @@ public class DetailsActivity extends Activity {
         mWebView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                //回退到消息页
+                if (url.equals(WebURLS.MESSAGE_URL)) {
+                    Intent intent = new Intent(CheckItemActivity.this, MessageActivity.class);
+                    startActivity(intent);
+
+                    return true; //表示消耗事
+                }
+
                 //回退到主页
                 if (url.equals(WebURLS.HOME_PAGE_URL)) {
-                    Intent intent = new Intent(DetailsActivity.this, ContainerActivity.class);
-                    startActivity(intent);
+                    view.loadUrl(url);
+                    return true; //在WebView中打开新链接
                 }
 
-                //马上换按钮
-                if (url.equals(WebURLS.MESSAGE_URL)) {
-                    Intent intent = new Intent(DetailsActivity.this, MessageActivity.class);
-                    startActivity(intent);
-                }
 
+                //确认勾选，此后的所有跳转交由WebView内部处理
                 view.loadUrl(url);
                 return true; //在WebView中打开新链接
             }
@@ -93,4 +92,5 @@ public class DetailsActivity extends Activity {
         //加载网页
         mWebView.loadUrl(URL);
     }
+
 }
