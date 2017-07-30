@@ -19,7 +19,7 @@ import com.cheetah.honordream.R;
 public class MsgListActivity extends Activity {
 
     private ImageButton mMsgListBack;
-    private LinearLayout mMsgListItem5;
+    private LinearLayout mMsgListItem1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,12 +34,12 @@ public class MsgListActivity extends Activity {
             }
         });
 
-        mMsgListItem5 = (LinearLayout) findViewById(R.id.activity_msg_lst_item_5);
-        mMsgListItem5.setOnClickListener(new View.OnClickListener() {
+        mMsgListItem1 = (LinearLayout) findViewById(R.id.activity_msg_lst_item_1);
+        mMsgListItem1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //跳转到消息聊天详情页
-                //startActivity(new Intent(MsgListActivity.this, MessageActivity.class));
+                //跳转到交易页一
+                startActivity(new Intent(MsgListActivity.this, ExchangeActivity.class));
             }
         });
     }

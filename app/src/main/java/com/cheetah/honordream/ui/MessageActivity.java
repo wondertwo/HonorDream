@@ -49,7 +49,7 @@ public class MessageActivity extends Activity {
         mMessageExchangeNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MessageActivity.this, ExchangeActivity.class));
+                startActivity(new Intent(MessageActivity.this, CheckItemActivity.class));
             }
         });
 

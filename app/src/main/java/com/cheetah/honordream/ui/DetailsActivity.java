@@ -51,21 +51,6 @@ public class DetailsActivity extends Activity {
         settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         settings.setLoadWithOverviewMode(true);
 
-        /*mWebView.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                //return false;
-                if (event.getAction() == KeyEvent.ACTION_DOWN) {
-                    if (keyCode == KeyEvent.KEYCODE_BACK && mWebView.canGoBack()) {
-                        //表示按返回键
-                        mWebView.goBack(); //后退 //.goForward();//前进
-                        return true;    //已处理
-                    }
-                }
-                return false;
-            }
-        });*/
-
         //设置WebViewClient
         mWebView.setWebViewClient(new WebViewClient() {
             @Override

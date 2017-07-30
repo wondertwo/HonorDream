@@ -65,7 +65,7 @@
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/img_msg_list_header_1" />
+                        android:src="@drawable/img_msg_list_system_message" />
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -75,14 +75,15 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="月涌大江啊流"
-                            android:textColor="@android:color/black" />
+                            android:text="【系统消息】您有新的交换信息啦"
+                            android:textColor="@color/colorAccent" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
+                            android:textColor="@color/colorAccent"
                             android:textSize="10sp"
-                            android:text="哇哇，这个好喜欢，可以用一盆盆栽换这个嘛" />
+                            android:text="【香洲区第一吕布】向您发起了交换，点击查看详情" />
                     </LinearLayout>
                 </LinearLayout>
                 <ImageView
