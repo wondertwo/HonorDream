@@ -10,7 +10,6 @@ public class WebURLS {
 
     //根据主机服务器地址配置
     private final static String WEB_URLS_BASE_IP = "http://10.20.240.37:8080";
-
     //应用主页
     public final static String HOME_PAGE_URL = WEB_URLS_BASE_IP + "/index.html";
     //物品详情

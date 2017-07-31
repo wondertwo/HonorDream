@@ -39,9 +39,11 @@ public class NetStateUtils {
 
         final ConnectivityManager connMgr = (ConnectivityManager)
                 context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo.State wifiConn = connMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState();
+        NetworkInfo.State wifiConn =
+                connMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState();
 
-        if (wifiConn == NetworkInfo.State.CONNECTED || wifiConn== NetworkInfo.State.CONNECTING) {
+        if (wifiConn == NetworkInfo.State.CONNECTED ||
+                wifiConn== NetworkInfo.State.CONNECTING) {
             Log.e("wifi connection", "true");
             return true;
         } else {
@@ -73,7 +75,8 @@ public class NetStateUtils {
      */
     public static String getLocalIpAddress() {
         try {
-            for (Enumeration<NetworkInterface> enumeration = NetworkInterface.getNetworkInterfaces(); enumeration.hasMoreElements(); ) {
+            for (Enumeration<NetworkInterface> enumeration =
+                 NetworkInterface.getNetworkInterfaces(); enumeration.hasMoreElements(); ) {
 
                 NetworkInterface networkInterface = enumeration.nextElement();
 
