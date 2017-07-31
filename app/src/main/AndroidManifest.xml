@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.ContainerActivity">
+        <activity android:name=".ui.LauncherActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,6 +23,7 @@
 
         <activity android:name=".ui.RegisterActivity" />
         <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.ContainerActivity" />
         <activity android:name=".ui.ClassificationActivity" />
         <activity android:name=".ui.SearchActivity" />
         <activity android:name=".ui.MessageActivity" />
